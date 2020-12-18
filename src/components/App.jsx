@@ -1,14 +1,27 @@
 import React from "react";
 
+//importing form component
+import Login from './Login'
+
+
+
+let isLogedin = false;
+
+//Conditional Functioning
+function ConditionalForm(){
+  if(isLogedin===true){
+    return <h1>Hello</h1>;
+  }
+  else{
+    return<Login />;
+  }
+}
+
+
 function App() {
   return (
     <div className="container">
-      <h1>Hello</h1>
-      <form className="form">
-        <input type="text" placeholder="Username" />
-        <input type="password" placeholder="Password" />
-        <button type="submit">Login</button>
-      </form>
+      {ConditionalForm()}     
     </div>
   );
 }
